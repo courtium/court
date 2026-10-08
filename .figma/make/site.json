@@ -1,0 +1,11 @@
+{
+  "title": "Real Dates, Real Values, No Noise",
+  "description": "Effortlessly generate React components styled with Tailwind CSS, streamlining the development process for web developers and enhancing productivity.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #EDE8DF;
+  --color-teal: #2D7D7A;
+  --color-teal-dark: #1F5F5C;
+  --color-teal-light: #3A9490;
+  --font-sans: 'DM Sans', sans-serif;
+}
+
+* {
+  font-family: 'DM Sans', sans-serif;
+}
+
+@keyframes modal-backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-modal-backdrop {
+  animation: modal-backdrop 180ms ease-out both;
+}
+
+.animate-modal-pop {
+  animation: modal-pop 220ms ease-out both;
+}
+
+@keyframes splash-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0);
+  }
+}
+
+@keyframes splash-glow-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-14px, 12px, 0) scale(1.06);
+  }
+}
+
+@keyframes splash-heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  12% {
+    transform: scale(1.04);
+  }
+  24% {
+    transform: scale(1);
+  }
+  36% {
+    transform: scale(1.025);
+  }
+  48% {
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.splash-glow-one {
+  animation: splash-glow-drift 16s ease-in-out infinite;
+}
+
+.splash-glow-two {
+  animation: splash-glow-drift 20s ease-in-out infinite reverse;
+}
+
+.splash-relationship-art {
+  animation: splash-float 8s ease-in-out infinite;
+}
+
+.splash-logo-mark {
+  animation: splash-logo-pulse 4.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.splash-logo img,
+.splash-wordmark {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.splash-heartbeat {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: splash-heartbeat 4s ease-in-out infinite;
+}
+
+.splash-content {
+  animation: splash-content-enter 700ms ease-out both;
+}
+
+@keyframes splash-logo-pulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 5px 8px rgba(45, 125, 122, 0.08));
+  }
+  50% {
+    transform: translateY(-5px) scale(1.035);
+    filter: drop-shadow(0 10px 14px rgba(45, 125, 122, 0.2));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-glow-one,
+  .splash-glow-two,
+  .splash-relationship-art,
+  .splash-logo-mark,
+  .splash-heartbeat,
+  .splash-content {
+    animation: none;
+  }
+}
